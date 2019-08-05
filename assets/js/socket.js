@@ -10,15 +10,15 @@ let socket = new Socket("/socket", {
   }
 });
 
-socket.connect()
+socket.connect();
 
-let channel = socket.channel("stats", {})
+let channel = socket.channel("stats", {});
 channel.join()
   .receive("ok", resp => {
-    console.log("Joined successfully", resp)
+    console.log("Joined successfully", resp);
   })
   .receive("error", resp => {
-    console.log("Unable to join", resp)
+    console.log("Unable to join", resp);
   });
 
 channel.push("stats", {});
@@ -41,6 +41,6 @@ document.getElementById("del_incomp").onclick = function (e) {
     body: "del_incomp"
   });
   e.preventDefault();
-}
+};
 
 export default socket;
