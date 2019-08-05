@@ -1,0 +1,66 @@
+@import "~milligram";
+
+html,
+body {
+    background-color: #191A1B;
+    color: #E8E6E3;
+    font-family: 'Roboto Slab', serif;
+}
+
+section {
+    align-content: center;
+    text-align: center;
+}
+
+header section {
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-bottom-color: #E8E6E3;
+}
+
+ul>li {
+    list-style: none;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+    color: #E8E6E3;
+    text-decoration: none;
+}
+
+#status a,
+#status a:link,
+#status a:visited,
+#status a:hover,
+#status a:focus,
+#status a:active {
+    color: #68B2FA;
+}
+
+.logo img {
+    max-width: 15rem;
+    vertical-align: middle;
+    margin-right: 4rem;
+}
+
+.logo h1 {
+    display: inline-block;
+}
+
+#apps li {
+    margin-bottom: 5rem;
+}
+
+#apps li img {
+    width: 30rem;
+    border-radius: 15px;
+}
+
+#status li {
+    display: inline-block;
+    padding-right: 3rem;
+}

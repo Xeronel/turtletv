@@ -1,0 +1,32 @@
+<section>
+  <ul id="status">
+    <li>Disk Size: <span id="hdd_size"></span></li>
+    <li>Disk Usage: <span id="hdd_used"></span></li>
+    <li>CPU Usage: <span id="cpu_util"></span></li>
+    <li>Incomplete Downloads: <span id="incomp_size"></span> <a id="del_incomp" href="#">[delete]</a></li>
+  </ul>
+</section>
+
+<section>
+  <ul id="apps">
+    <li>
+      <a href="//<%= @conn.host %>:8081">
+        <img src="<%= Routes.static_path(@conn, "/images/sickchill.png") %>">
+      </a><br>
+      <p>Automatic Video Library Manager for TV Shows.</p>
+    </p>
+  </li>
+  <li>
+    <a href="//<%= @conn.host %>:5050">
+      <img src="<%= Routes.static_path(@conn, "/images/couchpotato.png") %>">
+    </a>
+    <p>Download movies automatically as soon as they are available.</p>
+  </li>
+  <li>
+    <a href="//<%= @conn.host %>:5050">
+      <img src="<%= Routes.static_path(@conn, "/images/transmission.png") %>">
+    </a>
+    <p>A fast and easy to use BitTorrent client.</p>
+  </li>
+</ul>
+</section>
