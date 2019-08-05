@@ -1,0 +1,16 @@
+[Unit]
+Description=TurtleTV
+
+[Service]
+Type=simple
+User=turtletv
+Group=turtletv
+Restart=on-failure
+Environment=MIX_ENV=prod "PORT=4000"
+Environment=LANG=en_US.UTF-8
+
+WorkingDirectory=/opt/turtletv
+ExecStart=/usr/bin/mix phoenix.server
+
+[Install]
+WantedBy=multi-user.target
