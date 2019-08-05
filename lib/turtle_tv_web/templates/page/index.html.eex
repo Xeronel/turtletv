@@ -23,7 +23,7 @@
     <p>Download movies automatically as soon as they are available.</p>
   </li>
   <li>
-    <a href="//<%= @conn.host %>:5050">
+    <a href="//<%= @conn.host %>:9091">
       <img src="<%= Routes.static_path(@conn, "/images/transmission.png") %>">
     </a>
     <p>A fast and easy to use BitTorrent client.</p>
