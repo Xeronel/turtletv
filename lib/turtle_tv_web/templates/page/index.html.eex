@@ -13,7 +13,7 @@
       <a href="//<%= @conn.host %>:8081">
         <img src="<%= Routes.static_path(@conn, "/images/sickchill.png") %>">
       </a><br>
-      <p>Automatic video library manager for TV Shows.</p>
+      <p>Automatic video library manager for TV shows.</p>
     </p>
   </li>
   <li>
