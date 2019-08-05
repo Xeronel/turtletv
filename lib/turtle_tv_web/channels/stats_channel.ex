@@ -22,6 +22,7 @@ defmodule TurtleTvWeb.StatsChannel do
       |> Enum.at(0)
       |> String.to_integer()
       |> Kernel.-(4)
+      |> Kernel.*(1024)
 
     cpu_util = :cpu_sup.util()
 
