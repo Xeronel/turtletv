@@ -12,4 +12,4 @@ let filesize = function humanReadable(bytes, si) {
     return bytes.toFixed(1) + ' ' + units[u];
 }
 
-export default filesize
+export default filesize;
