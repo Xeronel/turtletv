@@ -21,7 +21,9 @@ channel.join()
     console.log("Unable to join", resp);
   });
 
-channel.push("stats", {});
+channel.push("stats", {
+  body: "hdd"
+});
 
 setInterval(function () {
   channel.push("stats", {
@@ -43,6 +45,6 @@ window.onload = function () {
       body: "del_incomp"
     });
   };
-}
+};
 
 export default socket;
