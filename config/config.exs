@@ -9,7 +9,7 @@ use Mix.Config
 
 # Configures the endpoint
 config :turtle_tv, TurtleTvWeb.Endpoint,
-  url: [host: "localhost"],
+  url: [host: nil],
   secret_key_base: "bl1ETi9ELjLL+ufIenx6XXmA4cYZJ4hA3waxCTXUloJtc5T36tR5VFUvzNdWC4mh",
   render_errors: [view: TurtleTvWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: TurtleTv.PubSub, adapter: Phoenix.PubSub.PG2]
