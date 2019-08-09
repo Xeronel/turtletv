@@ -36,11 +36,13 @@ channel.on("hdd", response => {
   document.getElementById("cpu_util").innerHTML = parseInt(filesize(response.cpu_util)) + "%";
 });
 
-document.getElementById("del_incomp").onclick = function (e) {
-  channel.push("stats", {
-    body: "del_incomp"
-  });
-  e.preventDefault();
-};
+window.onload = function () {
+  document.getElementById("del_incomp").onclick = function (e) {
+    e.preventDefault();
+    channel.push("stats", {
+      body: "del_incomp"
+    });
+  };
+}
 
 export default socket;
