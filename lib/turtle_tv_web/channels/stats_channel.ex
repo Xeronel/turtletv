@@ -12,7 +12,9 @@ defmodule TurtleTvWeb.StatsChannel do
   end
 
   @spec handle_in(String.t(), map, Phoenix.Socket.t()) :: {:noreply, Phoenix.Socket.t()}
-  def handle_in("stats", %{}, socket) do
+  def handle_in("stats", body, socket) when body === %{}, do: {:noreply, socket}
+
+  def handle_in("stats", %{"body" => "hdd"}, socket) do
     {_, size, used} = :disksup.get_disk_data() |> Enum.find(&('/' === elem(&1, 0)))
 
     incmp_size =
