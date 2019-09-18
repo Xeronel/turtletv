@@ -18,7 +18,7 @@ defmodule TurtleTvWeb.StatsChannel do
     {_, size, used} = :disksup.get_disk_data() |> Enum.find(&('/' === elem(&1, 0)))
 
     incmp_size =
-      :os.cmd('du -s /media/downloads/incomplete')
+      :os.cmd('du -s /home/turtletv/downloads/incomplete')
       |> to_string()
       |> String.split("\t")
       |> Enum.at(0)
@@ -39,7 +39,7 @@ defmodule TurtleTvWeb.StatsChannel do
   end
 
   def handle_in("stats", %{"body" => "del_incomp"}, socket) do
-    :os.cmd('rm -rf /media/downloads/incomplete/*')
+    :os.cmd('rm -rf /home/turtletv/downloads/incomplete/*')
     {:noreply, socket}
   end
 end
