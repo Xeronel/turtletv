@@ -15,6 +15,11 @@
           <img src="<%= Routes.static_path(@conn, "/images/turtlebutter.png") %>">
           <h1>TurtleTV</h1>
         </a>
+        <div id="ctrl" class="link">
+          <a id="reboot" href="#">Reboot</a>
+          | 
+          <a id="poweroff" href="#">Shutdown</a>
+        </div>
       </section>
     </header>
     <main role="main" class="container">

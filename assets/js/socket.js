@@ -45,6 +45,20 @@ window.onload = function () {
       body: "del_incomp"
     });
   };
+
+  document.getElementById("poweroff").onclick = function (e) {
+    e.preventDefault();
+    channel.push("ctrl", {
+      body: "poweroff"
+    });
+  };
+
+  document.getElementById("reboot").onclick = function (e) {
+    e.preventDefault();
+    channel.push("ctrl", {
+      body: "reboot"
+    });
+  };
 };
 
 export default socket;

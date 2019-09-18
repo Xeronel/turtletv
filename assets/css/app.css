@@ -32,12 +32,12 @@ a:active {
     text-decoration: none;
 }
 
-#status a,
-#status a:link,
-#status a:visited,
-#status a:hover,
-#status a:focus,
-#status a:active {
+.link a,
+.link a:link,
+.link a:visited,
+.link a:hover,
+.link a:focus,
+.link a:active {
     color: #68B2FA;
 }
 
@@ -63,4 +63,10 @@ a:active {
 #status li {
     display: inline-block;
     padding-right: 3rem;
+}
+
+#ctrl {
+    position: absolute;
+    top: 0px;
+    right: 0px;
 }

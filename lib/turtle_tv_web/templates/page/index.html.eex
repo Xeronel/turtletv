@@ -1,5 +1,5 @@
 <section>
-  <ul id="status">
+  <ul id="status" class="link">
     <li>Disk Size: <span id="hdd_size"></span></li>
     <li>Disk Usage: <span id="hdd_used"></span></li>
     <li>CPU Usage: <span id="cpu_util"></span></li>

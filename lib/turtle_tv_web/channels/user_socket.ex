@@ -3,6 +3,7 @@ defmodule TurtleTvWeb.UserSocket do
 
   ## Channels
   channel "stats", TurtleTvWeb.StatsChannel
+  channel "ctrl", TurtleTvWeb.CtrlChannel
 
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After
