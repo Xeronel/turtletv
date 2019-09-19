@@ -12,8 +12,10 @@ let socket = new Socket("/socket", {
 
 socket.connect();
 
-let channel = socket.channel("stats", {});
-channel.join()
+let stats_channel = socket.channel("stats", {});
+let ctrl_channel = socket.channel("ctrl", {});
+
+stats_channel.join()
   .receive("ok", resp => {
     console.log("Joined successfully", resp);
   })
@@ -21,17 +23,17 @@ channel.join()
     console.log("Unable to join", resp);
   });
 
-channel.push("stats", {
+stats_channel.push("stats", {
   body: "hdd"
 });
 
 setInterval(function () {
-  channel.push("stats", {
+  stats_channel.push("stats", {
     body: "hdd"
   });
 }, 3000);
 
-channel.on("hdd", response => {
+stats_channel.on("hdd", response => {
   document.getElementById("hdd_size").innerHTML = filesize(response.size);
   document.getElementById("hdd_used").innerHTML = response.used + "%";
   document.getElementById("incomp_size").innerHTML = filesize(response.incmp_size);
@@ -41,21 +43,21 @@ channel.on("hdd", response => {
 window.onload = function () {
   document.getElementById("del_incomp").onclick = function (e) {
     e.preventDefault();
-    channel.push("stats", {
+    stats_channel.push("stats", {
       body: "del_incomp"
     });
   };
 
   document.getElementById("poweroff").onclick = function (e) {
     e.preventDefault();
-    channel.push("ctrl", {
+    ctrl_channel.push("ctrl", {
       body: "poweroff"
     });
   };
 
   document.getElementById("reboot").onclick = function (e) {
     e.preventDefault();
-    channel.push("ctrl", {
+    ctrl_channel.push("ctrl", {
       body: "reboot"
     });
   };
