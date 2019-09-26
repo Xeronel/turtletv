@@ -9,7 +9,7 @@ Restart=on-failure
 Environment=MIX_ENV=prod "PORT=4000"
 Environment=LANG=en_US.UTF-8
 
-WorkingDirectory=/opt/turtletv
+WorkingDirectory=/srv/turtletv
 ExecStart=/usr/bin/mix phoenix.server
 
 [Install]
