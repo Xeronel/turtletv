@@ -17,10 +17,18 @@ let ctrl_channel = socket.channel("ctrl", {});
 
 stats_channel.join()
   .receive("ok", resp => {
-    console.log("Joined successfully", resp);
+    console.log("Joined stats successfully", resp);
   })
   .receive("error", resp => {
-    console.log("Unable to join", resp);
+    console.log("Unable to join stats", resp);
+  });
+
+ctrl_channel.join()
+  .receive("ok", resp => {
+    console.log("Joined ctrl successfully", resp);
+  })
+  .receive("error", resp => {
+    console.log("Unable to join ctrl channel", resp);
   });
 
 stats_channel.push("stats", {
